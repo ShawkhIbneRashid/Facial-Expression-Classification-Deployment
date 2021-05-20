@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+Template Name: Surogou
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Expression Classifier</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="./layout.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+
+<style>
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 15px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 30%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="one_half first">
+      <h1 class="logoname" style = "margin-left:100px; margin-right:100px"><a href = "index.html"><span>Facial Expression Classifier</span></a></h1> 
+    </div>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div style = "text-align: justify;text-justify: inter-word;"> 
+      <!-- ################################################################################################ -->
+
+      <h2 style = "margin-left:100px; margin-right:100px; font-size: 30px; color: #006600">Upload a Face Image & Check Which Facial Expression it is</h2>
+
+		<p style="margin-left:100px; margin-right:100px; font-size: 20px">
+		Not sure whether the facial expression is neutral, sad or angry? Our facial expression classifier is here to help. Upload an image of the face and remove your confusion to some extent. Our model is able to predict seven expressions, which are angry, fear, annoyed, happy, sad, surprised or neutral. 
+		</p>
+		
+	   <div style="margin-left:100px; margin-right:100px; font-size: 20px">
+       <form action="" method=post enctype=multipart/form-data>
+        <input style="font-size: 20px" class = "btn btn-info btn-lg" type=file name=file>
+        <input style="font-size: 20px; margin-top:10px" type=submit value=Upload class = "btn btn-info btn-lg">
+       </form>
+    </div>
+  </div>
+		<!--
+		<div>
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Continue</button>
+		</div>
+		-->
+		<div class="row" style = "margin-left:100px; margin-right:100px;>
+	   	<div class="col-lg-4">
+          <div class="page-header">
+            <h3 id="tables" style = "font-size: 30px; color: #006600">Prediction</h3>
+          </div>
+          <div class="bs-component">
+            <table class="table table-hover">
+                <tr class="table-active">
+                  <th scope="col" style="font-size: 20px; color: #006600">Image</th>
+                  <th scope="col"style="font-size: 20px; color: #006600">Expression</th>
+                </tr>
+                <tr>
+                    <th scope="row"> <img width="300" height="300" src="{{imagesource}}" /> </th>
+                    <td> <p style="font-size: 20px"> According to our model, the expression of the face is <span style="color:teal"><b>{{label[0]}}</b></span> with a probability of <span style="color:teal"><b>{{label[1]}}</b></span>. The second best guess for the facial expression is <span style="color:teal"><b>{{label[2]}}</b></span>.</p> </td>
+                  </tr>
+            </table> 
+        </div>
+      </div>
+	</div>
+	
+	  
+</body>
+</html>
