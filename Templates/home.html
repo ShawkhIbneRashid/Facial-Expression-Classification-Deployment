@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Expression Classifier</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="./layout.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+
+<style>
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 15px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 30%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="one_half first">
+      <h1 class="logoname" style = "margin-left:100px; margin-right:100px"><a href = "index.html"><span>Table Extraction from PNG files</span></a></h1> 
+    </div>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div style = "text-align: justify;text-justify: inter-word;"> 
+      <!-- ################################################################################################ -->
+
+      <h2 style = "margin-left:100px; margin-right:100px; font-size: 30px; color: #006600">Upload a png image and it will extract the tables from the image. </h2>
+
+		<p style="margin-left:100px; margin-right:100px; font-size: 20px">
+		The website first converts the extracted table data into JSON format and then displays the tables in seperate HTML pages.
+		</p>
+		
+	   <div style="margin-left:100px; margin-right:100px; font-size: 20px">
+       <form action="" method=post enctype=multipart/form-data>
+        <input style="font-size: 20px" class = "btn btn-info btn-lg" type=file name=file>
+        <input style="font-size: 20px; margin-top:10px" type=submit value=Upload class = "btn btn-info btn-lg">
+       </form>
+    </div>
+  </div>
+		<!--
+		<div>
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Continue</button>
+		</div>
+		-->
+		<div class="row" style = "margin-left:100px; margin-right:100px;>
+	   	<div class="col-lg-4">
+          <div class="page-header">
+            <h3 id="tables" style = "font-size: 30px; color: #006600">{{label}}</h3>
+          </div>
+          
+      </div>
+	</div>
+	
+	  
+</body>
+</html>

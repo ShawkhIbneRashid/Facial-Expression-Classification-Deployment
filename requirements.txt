@@ -1,0 +1,12 @@
+PIL
+pytesseract
+sys
+pdf2image
+os
+opencv
+json
+nltk
+flask
+json2html
+webbrowser
+werkzeug
